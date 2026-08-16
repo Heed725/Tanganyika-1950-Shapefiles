@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/build_tanganyika_1950.py'
       - '.github/workflows/build-tanganyika-1950.yml'
+      - '.pre-commit-config.yaml'
       - 'requirements.txt'
 
 permissions:
@@ -99,6 +100,10 @@ jobs:
           set -euo pipefail
           TAG='tanganyika-1950'
           TITLE='Tanganyika Provinces and Districts, 1950'
+
+          # Keep the published release tag on the latest successfully built commit.
+          git tag -f "$TAG" HEAD
+          git push origin "refs/tags/$TAG" --force
 
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG already exists; replacing assets."
