@@ -1,0 +1,18 @@
+{
+  "year": 1950,
+  "territory": "Tanganyika",
+  "province_count": 8,
+  "district_polygon_count": 54,
+  "provinces": [
+    "Central",
+    "Eastern",
+    "Lake Province",
+    "Northern",
+    "Southern",
+    "Southern Highlands",
+    "Tanga",
+    "Western"
+  ],
+  "crs": "EPSG:4326",
+  "source": "Princeton University Library historical administrative boundaries, digitized from British Colonial Office map"
+}
