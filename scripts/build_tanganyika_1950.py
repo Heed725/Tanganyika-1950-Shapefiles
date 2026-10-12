@@ -152,12 +152,8 @@ def main() -> None:
         json.dumps(summary, indent=2), encoding="utf-8"
     )
 
-    zip_shapefile(
-        out_dir, district_stem, dist_dir / f"{district_stem}_Shapefile.zip"
-    )
-    zip_shapefile(
-        out_dir, province_stem, dist_dir / f"{province_stem}_Shapefile.zip"
-    )
+    zip_shapefile(out_dir, district_stem, dist_dir / f"{district_stem}_Shapefile.zip")
+    zip_shapefile(out_dir, province_stem, dist_dir / f"{province_stem}_Shapefile.zip")
 
     fig, ax = plt.subplots(figsize=(9, 10))
     districts.boundary.plot(ax=ax, linewidth=0.35)
@@ -175,9 +171,7 @@ def main() -> None:
     ax.set_title("Tanganyika — Provinces and Districts, 1950")
     ax.set_axis_off()
     fig.tight_layout()
-    fig.savefig(
-        docs_dir / "Tanganyika_1950_preview.png", dpi=220, bbox_inches="tight"
-    )
+    fig.savefig(docs_dir / "Tanganyika_1950_preview.png", dpi=220, bbox_inches="tight")
     plt.close(fig)
 
     print(json.dumps(summary, indent=2))
